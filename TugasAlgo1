@@ -1,0 +1,210 @@
+##Tugas 1##
+#soal 1
+ini_list = [2,3,4,5,6,7,8,9,9,8,7,6,5,4,3,2]
+print(ini_list[7:9])
+
+#soal 2
+Arr1 = [1,2,3,4]
+Arr2 = [5,6,7,8]
+print(Arr2[-1:-4:-2] + (Arr1[-1:-4:-2]))
+
+#soal 3
+kata1 = "Hello"
+kata2 = "World"
+print(kata1[0]+kata2[0]+kata1[1]+kata2[1]+kata2[3]+kata2[2]+kata1[2:4]+kata1[4]+kata2[4])
+
+#soal 4
+Hari = ["rabu", "jum'at", "senin", "minggu", "sabtu", "selasa", "kamis"]
+Hari_fix = (Hari[3][0:], Hari[2][0:], Hari[5][0:], Hari[0][0:], Hari[6][0:], Hari[1][0:], Hari[4][0:])
+print("Hari_fix =", Hari_fix)
+
+
+#soal 5
+ini_string = "12345678910"
+casting_ke_integer = int(ini_string)
+casting_ke_list = [casting_ke_integer]
+print(casting_ke_list)
+
+##Tugas 2##
+##Suara buaya
+def suara_buaya(situasi):
+    if situasi == "Kalau ga ngapa ngapain":
+        return "Rawrr"
+    elif situasi == "Kalau ngerayu":
+        return "Kamu cantik banget hari ini!"
+    elif situasi == "Kalau pdkt":
+        return "Kalau aku chat ada yg marah ga?"
+    else:
+        return "Hmm"
+
+situasi = input("Situasi yang terjadi: ")
+suara = suara_buaya(situasi)
+print(f"Suara buaya: {suara}")
+
+
+##Tugas 3##
+#soal 1
+print("="*23)
+print("SOAL NO 1")
+angka = float(input("Masukkan Angka Disini : "))
+logika = angka < 3 or angka > 7 and angka < 9 or angka > 14
+print("Nilainya =", logika)
+#soal 2
+print("="*23)
+print("SOAL NO 2")
+a = int(input("Masukkan angka pertama    :"))
+b = int(input("Masukkan angka kedua      :"))
+c = int(input("Masukkan angka ketiga     :"))
+nilaiAkhir = [a,b,c]
+print("Nilai terkecil :", min(nilaiAkhir))
+#soal 3
+print("="*23)
+print("SOAL NO 3")
+print("Volume tabung :")
+jari2 = input("Nilai jari2 :")
+tinggi = input("Nilai tinggi :")
+jari2,tinggi = float(jari2),float(tinggi)
+volume = 3.14*jari2**2*tinggi
+volume = int(volume)
+print("Volume tabung =", volume)
+print("="*23)
+
+
+##Tugas 4##
+print("SOAL NO 1")
+print("_"*50)
+print("BIAYA PARKIR")
+print("_"*50)
+a = input("Masukkan jenis kendaraan : (mobil/motor/bis/truk)")
+b = float(input("Masukkan durasi(jam):"))
+print("Jenis kendaraan :", a)
+print("Durasi(Jam) :", b)
+match a :
+    case "mobil" :
+        biaya = 5000
+        if b > 2 :
+            print(f"biaya : Rp.{int(biaya*b)-(2*biaya):,}")
+        elif b >= 0 and b <= 2 :
+            print(biaya - biaya)
+        else :
+            print("error")
+    case "motor" :
+        biaya = 2000
+        if b > 1 :
+            print(f"biaya : Rp.{int(biaya*b)-(1*biaya):,}")
+        elif b >= 0 and b <= 1 :
+            print(biaya-biaya)
+        else :
+            print("error")
+    case "bis" :
+        biaya = 10000
+        if b > 0.5 :
+            print(f"biaya : Rp.{int(biaya*b)-(0.5*biaya):,}")
+        elif b >= 0 and b <= 0.5 :
+            print(biaya-biaya)
+        else :
+            print("error")
+    case "truk" : 
+        biaya = 15000
+        if b > 0.25 :
+            print(f"biaya : Rp.{int(biaya*b)-(0.25*biaya):,}")
+        elif b >= 0 and b <= 0.25 :
+            print(biaya-biaya)
+        else :
+            print("error")
+print("_"*50)
+print("SOAL NO 2")
+print("="*42)
+print("BIAYA PENGIRIMAN")
+print("="*42)
+a = float(input("Berat barang(kg) :"))
+b = float(input("Jarak pengiriman(km) :"))
+c = input("Pengiriman kilat(ya/tidak)")
+print("Berat barang(kg) :", a)
+print("Jarak pengiriman(km) :", b)
+print("Apakah anda memilih pengiriman kilat? :", c)
+if a < 1 :
+  biaya = 10000
+elif 1 <= a <= 5 :
+  biaya = 15000
+else :
+  biaya = 20000
+
+biaya_pengiriman = 5000
+if b < 10 :
+  biaya_jarak = 0
+elif b >= 10 and  b <= 20 :
+  biaya_jarak = 5000
+else :
+  biaya_jarak = 10000
+  
+if c == "ya" :
+  biaya_kilat = 0.2 * (biaya + biaya_jarak)
+else :
+  biaya_kilat = 0
+biaya_pengiriman = biaya + biaya_jarak + biaya_kilat
+print(f"Biaya pengiriman : Rp.{(biaya_pengiriman):,}")
+print("="*42)
+print("SOAL NO 3")  
+print("="*55)
+print("Kalkulator sederhana")
+print("Harap masukkan operasi tambah(+), kurang(-), kali(*), atau bagi(/)")
+print("="*55)
+
+x = int(input("Masukkan angka pertama :"))
+operasi = input("Masukkan operasi yang diinginkan :")
+y = int(input("Masukkan angka kedua"))
+
+tambah = x + y
+kurang = x - y
+kali = x * y 
+bagi = x / y
+
+if operasi == "+" :
+  print("Hasil =", tambah)
+elif operasi == "-" :
+  print("Hasil =", kurang)
+elif operasi == "*" :
+  print("Hasil =", kali)
+else :
+  print("Hasil =", bagi)
+print("="*55)
+
+
+##Tugas 5##
+##SOAL NO 1##
+input_str = "Website ini diserang, Wehehehe!" #masukkan string
+huruf_vokal = "a,e,i,o,u" #masukkan angka yg ingin di hilangkan
+result = "" #sediakan variabel untuk hasil akhir
+for char in input_str : #dilakukan loop untuk karakter 'char' dalam 'input_str'
+  if char not in huruf_vokal : #diperiksa apakah 'char' ada dalam 'huruf_vokal' atau tidak
+    result += char
+print(result) #print hasilnya
+
+##SOAL NO 2##
+input_str = str(input("Masukkan karakter :")) #masukkan karakter disini
+treasure_value = 0 #variabel 'treasure value awalnya 0'
+for char in input_str :
+  if char == "$" : #jika dimasukkan karakter '$' maka akan ditambah 100
+    treasure_value += 100
+  elif char == "x" :
+    treasure_value -= 10 #jika dimasukkan karakter 'x' dikurangi 10
+    if treasure_value >= 10 :
+      treasure_value -= 10
+    else :
+      treasure_value = 0
+  elif char == "#" :
+    treasure_value *= 0.5 #jika dimasukkan '#' 'treasure_value' akan turun 50%
+print(int(treasure_value))
+  
+##SOAL NO 3##    
+inputan = int(input("Masukkan angka :"))
+jumlah = 0 
+for i in range(1, inputan + 1): #dimulai dari indeks 1 supaya nanti inputannya 10 kali
+  if i % 3 == 0 : #jika inputannya di modulus 3 sisnya 0 maka 'jumlah' ditambah 3
+    jumlah += 3
+  elif i % 3 == 1 : #jika inputannya dimodulus 3 sisanya 1 maka 'jumlah' ditambah 1
+    jumlah += 1
+  elif i % 3 == 2 : #jika inputannya dimodulus 3 sisanya 2 maka 'jumlah' ditambah 2
+    jumlah += 2
+print(jumlah) #lalu print 'jumlah' untuk mengetahui hasil akhir
